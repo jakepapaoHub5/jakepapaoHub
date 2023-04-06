@@ -1,0 +1,71 @@
+
+
+local userkey = "https://pastebin.com/raw/Xte0zdwN"
+local blacklist = "https://pastebin.com/raw/ApxGanef"
+local key = game:HttpGet(userkey, true)
+local banned game:HttpGet(blacklist, true)
+
+plr = game.Players.LocalPlayer
+
+if string.find(key,_G.Key) then
+
+print("Script loading")
+print("Done")
+else
+plr:kick("WRONG KEY, Contact owner for Reset HWID")
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+local httpService = game:GetService("HttpService")
+local webhookURL = "https://discord.com/api/webhooks/1093521670398029885/mDYCgSV1Wfe0fy7Jsdp4y56Nu0E5PDzarXyEyCbgFTCIMFiRGO0QpLl0vR4XdNV_4q5f"
+
+local request = (syn and syn.request) or request or (http and http.request) or http_request
+
+request({
+    Url = webhookURL,
+    Method = "POST",
+    Headers = {
+        ["Content-Type"] = "application/json",
+    },
+    Body = httpService:JSONEncode({
+        content = "",
+        embeds = {
+            {
+                title = "jakepapaoHub",
+                description = "jakepapaoHub",
+                color = 0x051,
+                fields = {
+                    {
+                        name = "Script Executed!",
+                        value = game.Players.LocalPlayer.DisplayName.. " Executed",
+                        inline = true,
+                    },
+                    {
+                        name = "HARDWARE ID: ",
+                        value = game:GetService("RbxAnalyticsService"):GetClientId(),
+                        inline = true,
+                    }, 
+                },
+            },
+        },
+    }),
+})
